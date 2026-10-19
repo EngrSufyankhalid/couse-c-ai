@@ -2,9 +2,9 @@
 
 **Starship Operational Unit:** USSE Noosphere Bridge Crew  
 **Station Role:** Protocol & Interface Specialist  
-**Officer:** Fatima Siddiqa  
+**Officer:** Syed Hashir Sohail  
 **Current team:** Squad Sutskever<br>
-**Original squadron:** Squadron Goodfellow<br>
+**Squad:** Squad Sutskever<br>
 **Deliverable File:** `02_Socratic_Protocol_Map.md`  
 
 ---
@@ -542,7 +542,7 @@ The following production-grade Python specification implements the Socratic stat
 ```python
 """
 USSE Noosphere: Socratic Elenchus State Transducer Engine
-Officer: Protocol & Interface Specialist (Fatima Siddiqa)
+Officer: Protocol & Interface Specialist (Syed Hashir Sohail)
 Architecture: Deterministic Finite State Transducer with Dynamic DST Ledger
 """
 
@@ -700,7 +700,7 @@ class SocraticStateEngine:
 
 ## 7. Downstream Engineering Contracts & JSON-RPC Protocol for Core Architect
 
-To ensure seamless integration into `04_dialogic_engine.py` by the **Core Architect** (Abdul Jalil Memon), the following operational interfaces, JSON-RPC 2.0 specifications, error codes, and data schemas are strictly standardized.
+To ensure seamless integration into `04_dialogic_engine.py` by the **Core Architect** (Syed Hashir Sohail), the following operational interfaces, JSON-RPC 2.0 specifications, error codes, and data schemas are strictly standardized.
 
 ### 7.1 State to JSON-RPC Method Mapping
 We confirm and adopt the exact method naming proposed by the Core Architect. The 5 FSM states and transition events map directly to these 6 JSON-RPC method endpoints without requiring translation layers:

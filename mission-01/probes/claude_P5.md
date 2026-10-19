@@ -2,7 +2,7 @@
 
 **Course:** Conversational Artificial Intelligence (WS 2026/27)  
 **Current team:** Squad Sutskever<br>
-**Original squadron:** Squadron Goodfellow<br>
+**Squad:** Squad Sutskever<br>
 **Model:** Claude (Opus 5.5, effort: Extra; Incognito chat)  
 **Date:** 11 October 2026  
 **Probe:** P5 — Definition Refinement and Consistency  

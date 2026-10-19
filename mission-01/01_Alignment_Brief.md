@@ -2,9 +2,9 @@
 
 **Starship Operational Unit:** USSE Noosphere Bridge Crew  
 **Station Role:** Historical Archivist  
-**Officer:** Abubaker Attique  
+**Officer:** Syed Hashir Sohail  
 **Current team:** Squad Sutskever<br>
-**Original squadron:** Squadron Goodfellow<br>
+**Squad:** Squad Sutskever<br>
 **Deliverable File:** `01_Alignment_Brief.md`  
 
 ---

@@ -4,10 +4,10 @@
 
 **Station Role:** Ethical Navigator
 
-**Officer:** Syeda Manahil Javed
+**Officer:** Syed Hashir Sohail
 
 **Current team:** Squad Sutskever<br>
-**Original squadron:** Squadron Goodfellow
+**Squad:** Squad Sutskever
 
 **Deliverable File:** `03_Galilean_Sandbox.md`
 

@@ -1,9 +1,9 @@
 # 02 — FST Dialogue Manager & Noisy Channel Protocol
 
 **Role:** Communications & Protocol Officer  
-**Author:** Fatima Siddiqa  
+**Current maintainer:** Syed Hashir Sohail  
 **Current team:** Squad Sutskever<br>
-**Original squad:** Goodfellow (Group 18)<br>
+**Squad:** Squad Sutskever<br>
 **Mission:** 2  
 
 ---
@@ -162,7 +162,7 @@ This gives the noise token a dual role: **end-of-transmission marker** and **int
 """
 FSTDialogueManager & NoisyChannelSimulator
 Mission 02 — Communications & Protocol Officer
-Squad: Goodfellow (Group 18)  |  Author: Fatima Siddiqa
+Squad: Squad Sutskever  |  Author: Syed Hashir Sohail
 
 Design decisions (fixed before coding):
   1. Noise token is APPENDED, not substituted — preserves all 6 semantic words.
@@ -377,7 +377,7 @@ class NoisyChannelSimulator:
 if __name__ == "__main__":
     print("=" * 60)
     print("  USSE Noosphere — FST & Noisy Channel Smoke-Test")
-    print("  Communications & Protocol Officer: Fatima Siddiqa")
+    print("  Communications & Protocol Officer: Syed Hashir Sohail")
     print("=" * 60)
 
     fst     = FSTDialogueManager()
@@ -424,7 +424,7 @@ Running the `__main__` block above produces the following (noise tokens vary per
 ```
 ============================================================
   USSE Noosphere — FST & Noisy Channel Smoke-Test
-  Communications & Protocol Officer: Fatima Siddiqa
+  Communications & Protocol Officer: Syed Hashir Sohail
 ============================================================
 
 [HAPPY PATH]

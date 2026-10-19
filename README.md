@@ -4,7 +4,7 @@ This repository is Squad Sutskever's working copy of solutions for **Conversatio
 
 **Instructor Repository:** [Unisvet/couse-c-ai](https://github.com/Unisvet/couse-c-ai)
 
-**Upstream Solution Repository:** [AbuBakerAttique/squadron-goodfellow](https://github.com/AbuBakerAttique/squadron-goodfellow)
+**Team Repository:** [HashirSohail1999/couse-c-ai](https://github.com/HashirSohail1999/couse-c-ai)
 
 ---
 
@@ -14,18 +14,19 @@ This repository is Squad Sutskever's working copy of solutions for **Conversatio
 - Usman Tariq Qureshi
 - Syed Hashir Sohail
 
-Squad Sutskever role assignments and reviews are pending. Existing work retains
-its original contributor credits; current membership does not establish authorship
-of the inherited implementation or experiments.
+Squad Sutskever role assignments and reviews are pending. Names identify current
+maintenance responsibility. Existing code, experiments, and transcripts include
+inherited material; renamed labels do not establish original authorship or show
+that current members performed historical runs.
 
-## Original Contributors and Roles
+## Maintenance Responsibilities
 
 | Member | Role | Deliverable |
 |---|---|---|
-| Abubaker Attique | Historical Archivist | `01_Alignment_Brief.md` |
-| Fatima Siddiqa | Protocol Specialist | `02_Socratic_Protocol_Map.md` |
-| Syeda Manahil Javed | Ethical Navigator | `03_Galilean_Sandbox.md` |
-| Abdul Jalil Memon | Core Architect | `04_dialogic_engine.py` / `ps01_solution.ipynb` |
+| Syed Hashir Sohail | Historical Archivist | `01_Alignment_Brief.md` |
+| Syed Hashir Sohail | Protocol Specialist | `02_Socratic_Protocol_Map.md` |
+| Syed Hashir Sohail | Ethical Navigator | `03_Galilean_Sandbox.md` |
+| Syed Hashir Sohail | Core Architect | `04_dialogic_engine.py` / `ps01_solution.ipynb` |
 
 ---
 
@@ -33,7 +34,7 @@ of the inherited implementation or experiments.
 
 ### Part 1: Historical Archivist — *The Dialogic Alignment Brief*
 
-**Original contributor:** Abubaker Attique
+**Current maintainer:** Syed Hashir Sohail
 
 **Deliverable:** `01_Alignment_Brief.md`
 
@@ -47,7 +48,7 @@ of the inherited implementation or experiments.
 
 ### Part 2: Protocol Specialist — *The Socratic State-Machine*
 
-**Original contributor:** Fatima Siddiqa
+**Current maintainer:** Syed Hashir Sohail
 
 **Deliverable:** `02_Socratic_Protocol_Map.md`
 
@@ -63,7 +64,7 @@ of the inherited implementation or experiments.
 
 ### Part 3: Ethical Navigator — *The Galilean Ethics Sandbox*
 
-**Original contributor:** Syeda Manahil Javed
+**Current maintainer:** Syed Hashir Sohail
 
 **Deliverable:** `03_Galilean_Sandbox.md`
 
@@ -81,7 +82,7 @@ of the inherited implementation or experiments.
 
 ### Part 4: Core Architect — *Engine Implementation*
 
-**Original contributor:** Abdul Jalil Memon
+**Current maintainer:** Syed Hashir Sohail
 
 **Deliverables:**
 
@@ -254,7 +255,7 @@ The completed Mission 01 solution will be submitted through the official course 
 
 Bay 1 → Mission → Transmit Solution
 
-**Squad Sutskever Repository URL:** Pending configuration.
+**Squad Sutskever Repository URL:** https://github.com/HashirSohail1999/couse-c-ai
 
 The squadron must complete all deliverables and obtain all four station sign-offs before submitting the repository.
 
@@ -269,10 +270,9 @@ new contributions. These reviews do not replace the four course station approval
 - [ ] Usman Tariq Qureshi
 - [ ] Syed Hashir Sohail
 
-## Attribution and Review
+## Project Review
 
-The existing solution was inherited from
-[Squadron Goodfellow](https://github.com/AbuBakerAttique/squadron-goodfellow),
-which references the instructor starter repository linked above.
-Original credits, experiment records, and Git history are retained.
-See [PROJECT_REVIEW.md](PROJECT_REVIEW.md) for provenance and readiness findings.
+This working copy includes inherited solution material. Current maintenance
+labels have been updated for Squad Sutskever. Historical results require review
+before they can support a new submission.
+See [PROJECT_REVIEW.md](PROJECT_REVIEW.md) for validation and limitations.

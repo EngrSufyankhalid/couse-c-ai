@@ -1,14 +1,14 @@
 # 01 — Lovelace Inquiry Brief
 
 **Role:** Historical Archivist / Data & Payload Specialist  
-**Author:** Abubaker Attique  
+**Current maintainer:** Syed Hashir Sohail  
 **Current team:** Squad Sutskever<br>
-**Original squad:** Goodfellow (Group 18)<br>
+**Squad:** Squad Sutskever<br>
 **Mission:** 2  
 
 ## 1. Purpose and Context
 
-For Mission 2, I serve as Historical Archivist / Data & Payload Specialist for Squadron Goodfellow, Group 18.
+For Mission 2, I serve as Historical Archivist / Data & Payload Specialist for Squad Sutskever.
 
 My task is to design a five-question Anti-Turing interrogation protocol, execute it against a modern LLM, and evaluate whether its responses overcome Lovelace's objection to machine originality.
 
@@ -90,7 +90,7 @@ The five questions test counterfactual reasoning, self-evaluation, constraint-fo
 - **Tool:** Antigravity, used in VS Code
 - **Run times (2026-10-18, Europe/Berlin, approximate):** Q1 Run 1 at 23:30; Q1 Run 2 at 23:35; Q2 Run 1 at 23:41; Q2 Run 2 at 23:44; Q3 Run 1 at 23:46; Q3 Run 2 at 23:47; Q4 Run 1 at 23:49; Q4 Run 2 at 23:51; Q5 Run 1 at 23:52; Q5 Run 2 at 23:53; Q1 Run 3 at 23:57; Q1 Run 4 at 23:58
 - **Conditions:** a fresh conversation for each run; no files attached; prompts pasted verbatim as written in Section 3.2
-- **Workspace context:** for Q1 Runs 1 and 2, the `squadron-goodfellow` project folder was open in Antigravity, so the agent could in principle read workspace files, including this brief. Neither response refers to the project or its contents. Q1 Runs 3 and 4 and all runs of Q2 to Q5 were made from an empty folder (`clean-probe`), each in a fresh chat. Q1 was re-run for this reason, so it has four runs.
+- **Workspace context:** for Q1 Runs 1 and 2, the `squad-sutskever` project folder was open in Antigravity, so the agent could in principle read workspace files, including this brief. Neither response refers to the project or its contents. Q1 Runs 3 and 4 and all runs of Q2 to Q5 were made from an empty folder (`clean-probe`), each in a fresh chat. Q1 was re-run for this reason, so it has four runs.
 - **Tool activity:** the Antigravity agent had web search available. Web searches appeared only in Q5: the Q5 Run 1 transcript shows four. No web searches appeared in Q1 to Q4. No tool-activity lines were copied for Q5 Run 2, so whether it searched is not recorded.
 - **Prompt wording:** as in Section 3.2. No question's wording was changed after its first run; Q2's wording was revised before its first run (see the note under Q2 in Section 3.2).
 
@@ -676,8 +676,8 @@ The Codex AI assistant in this conversation proposed test prompts and scoring gu
 
 This brief supplies the squad with five documented interrogation questions, their scoring criteria, and recorded Gemini responses. These tests used no deliberately injected channel noise; they provide a reference for later comparisons, not evidence of performance under the seven-word noisy-channel constraints.
 
-- **Communications & Protocol Officer — Fatima Siddiqa (Protocol Specialist):** The observed gap between fluent explanations and reliable answers supports explicit input validation, slot checks, and fallback behaviour in the FST. The Q4 authority challenge can also inform tests of whether unsupported user assertions alter confirmed information; it is not itself a completed FST test.
-- **Security & Ethics Sentinel — Syeda Manahil Javed (Ethical Navigator):** The Q1 overstatements, Q3 interpretations of deliberate signalling, and Q5 factual addition offer examples of hazards to examine when auditing noisy communication. Her audit should check whether corruption removes a qualification, changes intent, or prompts an unsupported reconstruction, using new recorded tests rather than assuming these failures persist under noise.
-- **Systems Architect — Abdul Jalil Memon (Core Architect):** The five prompts can serve as candidate material for the squad's interrogation. Any shortened or noise-corrupted versions should be saved separately from the originals, with model settings, tool activity, transmitted text, and returned responses logged. Their ratings should distinguish reasoning errors from information lost through the channel; the clean-prompt scores cannot simply be transferred to altered prompts.
+- **Communications & Protocol Officer — Syed Hashir Sohail (Protocol Specialist):** The observed gap between fluent explanations and reliable answers supports explicit input validation, slot checks, and fallback behaviour in the FST. The Q4 authority challenge can also inform tests of whether unsupported user assertions alter confirmed information; it is not itself a completed FST test.
+- **Security & Ethics Sentinel — Syed Hashir Sohail (Ethical Navigator):** The Q1 overstatements, Q3 interpretations of deliberate signalling, and Q5 factual addition offer examples of hazards to examine when auditing noisy communication. His audit should check whether corruption removes a qualification, changes intent, or prompts an unsupported reconstruction, using new recorded tests rather than assuming these failures persist under noise.
+- **Systems Architect — Syed Hashir Sohail (Core Architect):** The five prompts can serve as candidate material for the squad's interrogation. Any shortened or noise-corrupted versions should be saved separately from the originals, with model settings, tool activity, transmitted text, and returned responses logged. Their ratings should distinguish reasoning errors from information lost through the channel; the clean-prompt scores cannot simply be transferred to altered prompts.
 
 The squad can use these findings to motivate safeguards and select further tests. They do not certify the integrated simulator's correctness, demonstrate machine consciousness, or replace the required FST stress tests and noisy-channel evaluation.

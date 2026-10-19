@@ -2,7 +2,7 @@
 
 **Course:** Conversational Artificial Intelligence (WS 2026/27)  
 **Current team:** Squad Sutskever<br>
-**Original squadron:** Squadron Goodfellow<br>
+**Squad:** Squad Sutskever<br>
 **Model:** Gemini (Auto Mode)  
 **Date:** 11 October 2026  
 **Probe:** P5 — Definition Refinement and Consistency  

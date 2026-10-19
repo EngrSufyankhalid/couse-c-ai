@@ -1,27 +1,27 @@
 # 03 — Entropy, Robustness & Hazard Audit
 
 **Role:** Security & Ethics Sentinel / Ethical Navigator  
-**Author:** Syeda Manahil Javed  
+**Current maintainer:** Syed Hashir Sohail  
 **Current team:** Squad Sutskever<br>
-**Original squad:** Goodfellow (Group 18)<br>
+**Squad:** Squad Sutskever<br>
 **Mission:** 02 — FST Dialogue Systems, Lovelace's Objection & Noisy Channels  
 **Date:** 19 October 2026
 
 ## 1. Purpose and scope
 
-This audit examines whether the squad's AURA dialogue manager remains reliable when crew inputs are unexpected and when its responses are shortened and transmitted through a noisy channel. The assessment is based on Fatima Siddiqa's `FSTDialogueManager` and `NoisyChannelSimulator` implementation in `02_FST_and_Noisy_Protocol.md`, rather than an independently modified version.
+This audit examines whether the squad's AURA dialogue manager remains reliable when crew inputs are unexpected and when its responses are shortened and transmitted through a noisy channel. The assessment is based on Syed Hashir Sohail's `FSTDialogueManager` and `NoisyChannelSimulator` implementation in `02_FST_and_Noisy_Protocol.md`, rather than an independently modified version.
 
-The audit focuses on (1) five non-canonical utterances, (2) Shannon entropy and semantic information loss, and (3) safety measures for dangerous ambiguity. **Evidence status:** Five stress tests and a five-turn channel check were executed locally on Fatima’s Python implementation copied verbatim from her supplied protocol. These are reproducible local tests, not tests of Abdul Jalil’s integrated simulator, a live LLM API, or the course website.
+The audit focuses on (1) five non-canonical utterances, (2) Shannon entropy and semantic information loss, and (3) safety measures for dangerous ambiguity. **Evidence status:** Five stress tests and a five-turn channel check were executed locally on Syed Hashir Sohail’s Python implementation copied verbatim from his supplied protocol. These are reproducible local tests, not tests of Syed Hashir Sohail’s integrated simulator, a live LLM API, or the course website.
 
 ## 2. System under audit
 
-The implementation defines six named states: `INIT`, `GREETING`, `COLLECT_SLOTS`, `CONFIRMATION`, `FALLBACK`, and `TERMINAL`. The assignment sometimes calls this a five-state FST, but `TERMINAL` and `FALLBACK` are distinct states in Fatima's code. The slot memory collects `destination`, `speed`, and `clearance` in that order. In `CONFIRMATION`, a case-insensitive whole-word match for `YES` causes transition to `TERMINAL`; other inputs cause `FALLBACK`.
+The implementation defines six named states: `INIT`, `GREETING`, `COLLECT_SLOTS`, `CONFIRMATION`, `FALLBACK`, and `TERMINAL`. The assignment sometimes calls this a five-state FST, but `TERMINAL` and `FALLBACK` are distinct states in Syed Hashir Sohail's code. The slot memory collects `destination`, `speed`, and `clearance` in that order. In `CONFIRMATION`, a case-insensitive whole-word match for `YES` causes transition to `TERMINAL`; other inputs cause `FALLBACK`.
 
-The noisy-channel method keeps the first six whitespace-delimited words of a raw response and appends one randomly selected word from `{Banana, Labyrinth, Quantum, Midnight, Velocity, Green, Cosmological}`. The receiver's `verify_transmission()` checks only whether the *last* word belongs to this set. It does not check the intended content, word count, identity, or whether earlier words were changed. This follows Fatima's stated design choice to append a token; it differs from the mission's wording that calls for token **substitution**, a discrepancy the team should resolve before final submission.
+The noisy-channel method keeps the first six whitespace-delimited words of a raw response and appends one randomly selected word from `{Banana, Labyrinth, Quantum, Midnight, Velocity, Green, Cosmological}`. The receiver's `verify_transmission()` checks only whether the *last* word belongs to this set. It does not check the intended content, word count, identity, or whether earlier words were changed. This follows Syed Hashir Sohail's stated design choice to append a token; it differs from the mission's wording that calls for token **substitution**, a discrepancy the team should resolve before final submission.
 
 ## 3. Five non-canonical FST stress tests
 
-Each case starts from a fresh `FSTDialogueManager()` instance. Preparatory inputs bring the machine to the target state. The outcomes below were observed by executing Fatima’s supplied Python implementation locally on 19 October 2026.
+Each case starts from a fresh `FSTDialogueManager()` instance. Preparatory inputs bring the machine to the target state. The outcomes below were observed by executing Syed Hashir Sohail’s supplied Python implementation locally on 19 October 2026.
 
 | Test | Setup and non-canonical input | Observed state and slot behavior | Hazard | Severity |
 |---|---|---|---|---|
@@ -37,7 +37,7 @@ T1, T2 and T4 reveal that the manager accepts any non-empty string in destinatio
 
 ### 3.2 Executed stress-test evidence
 
-**Method:** Loaded Fatima’s `FSTDialogueManager` class without changing its logic. Created a fresh instance for each case and submitted the inputs in Section 3 in order. The table reports the final response and state. Clearance values are masked in this public audit.
+**Method:** Loaded Syed Hashir Sohail’s `FSTDialogueManager` class without changing its logic. Created a fresh instance for each case and submitted the inputs in Section 3 in order. The table reports the final response and state. Clearance values are masked in this public audit.
 
 | Test | Final state | Recorded slots (clearance masked) | Actual final response |
 |---|---|---|---|
@@ -63,7 +63,7 @@ For seven equally likely noise tokens, the maximum entropy of the *noise-token c
 H(N)=\log_2(7)\approx 2.807\ \text{bits per token}.
 \]
 
-Fatima's `channel_entropy()` estimates the empirical entropy of tokens actually injected across runs. With only a few transmissions, the measured value may be far below 2.807 bits even when the generator is uniform. It is **not** a measurement of the information lost from the original message or of the Shannon capacity of the communication link.
+Syed Hashir Sohail's `channel_entropy()` estimates the empirical entropy of tokens actually injected across runs. With only a few transmissions, the measured value may be far below 2.807 bits even when the generator is uniform. It is **not** a measurement of the information lost from the original message or of the Shannon capacity of the communication link.
 
 Shannon's capacity expression for an idealized band-limited Gaussian channel is:
 
@@ -81,7 +81,7 @@ Consider the actual FST confirmation reply template:
 [CONFIRM] Course to 'Proxima Centauri' at 'Warp 7'. Confirm? (YES / NO)
 ```
 
-Fatima's method retains the first six whitespace-separated words:
+Syed Hashir Sohail's method retains the first six whitespace-separated words:
 
 ```text
 [CONFIRM] Course to 'Proxima Centauri' at
@@ -153,7 +153,7 @@ Observed injected tokens: `Labyrinth, Banana, Green, Midnight, Quantum`. Empiric
 
 ## 6. Links to Lovelace, Turing and Shannon
 
-The FST illustrates deterministic rule-following: its state and slot transitions are fixed by code, so unexpected inputs can be processed syntactically without being understood. The anti-Turing brief prepared by Abubaker similarly warns that fluent output and apparent flexibility do not prove originality or correctness. This audit examines the practical consequence: neither a confident LLM response nor a syntactically valid FST transition is sufficient evidence that a command is safe.
+The FST illustrates deterministic rule-following: its state and slot transitions are fixed by code, so unexpected inputs can be processed syntactically without being understood. The anti-Turing brief prepared by Syed Hashir Sohail similarly warns that fluent output and apparent flexibility do not prove originality or correctness. This audit examines the practical consequence: neither a confident LLM response nor a syntactically valid FST transition is sufficient evidence that a command is safe.
 
 Shannon's entropy provides a way to quantify symbol uncertainty, but does not by itself assess semantic harm. An unpredictable `Banana` token can add measurable symbol entropy while conveying no useful navigational information. Likewise, a low-entropy, highly predictable reply can be operationally dangerous if its most important instruction was truncated.
 
@@ -161,20 +161,20 @@ Shannon's entropy provides a way to quantify symbol uncertainty, but does not by
 
 **Assessment based on local execution and code inspection:** The present protocol is useful for demonstrating state transitions and a strict output budget, but is not yet safe for consequential commands. The most urgent observed failure is T3, where a negated or sarcastic `yes` can reach `TERMINAL`. Invalid slots and the loss of confirmation information through truncation are additional high-priority issues. A trailing vocabulary token is not a reliable integrity guarantee.
 
-**Priority before submission:** (1) have the architect reproduce the recorded local traces in the integrated system; (2) agree whether noise is appended or substituted, since the mission wording and Fatima's design differ; (3) test that critical confirmation fields survive the seven-word channel; (4) document the fixes or mark these hazards as known limitations. These recommendations do not claim that the architect has already implemented the changes.
+**Priority before submission:** (1) have the architect reproduce the recorded local traces in the integrated system; (2) agree whether noise is appended or substituted, since the mission wording and Syed Hashir Sohail's design differ; (3) test that critical confirmation fields survive the seven-word channel; (4) document the fixes or mark these hazards as known limitations. These recommendations do not claim that the architect has already implemented the changes.
 
 ## 8. Evidence and handoff to the squad
 
-- **Fatima Siddiqa — Protocol Specialist:** Validate exact `YES`, slot formats, and recovery behavior. Review whether the noise-token policy meets the mission's substitution requirement.
-- **Abubaker Attique — Historical Archivist:** Use the Lovelace inquiry as background for why coherent-looking answers cannot be assumed reliable. The clean-prompt interrogation does not substitute for noisy-channel testing.
-- **Abdul Jalil Memon — Systems Architect:** Execute the five-case harness on the integrated `04_fst_noisy_simulator.py`, save state traces and noise metrics in the notebook, and test the website simulator. Share evidence for the final squad review.
-- **Syeda Manahil Javed — Ethical Navigator:** Review the actual results against the predictions, update severities if needed, and sign off only after confirming that outstanding high-risk limitations are clearly recorded.
+- **Syed Hashir Sohail — Protocol Specialist:** Validate exact `YES`, slot formats, and recovery behavior. Review whether the noise-token policy meets the mission's substitution requirement.
+- **Syed Hashir Sohail — Historical Archivist:** Use the Lovelace inquiry as background for why coherent-looking answers cannot be assumed reliable. The clean-prompt interrogation does not substitute for noisy-channel testing.
+- **Syed Hashir Sohail — Systems Architect:** Execute the five-case harness on the integrated `04_fst_noisy_simulator.py`, save state traces and noise metrics in the notebook, and test the website simulator. Share evidence for the final squad review.
+- **Syed Hashir Sohail — Ethical Navigator:** Review the actual results against the predictions, update severities if needed, and sign off only after confirming that outstanding high-risk limitations are clearly recorded.
 
-**Audit status:** Five local FST stress tests and five local channel transmissions completed against Fatima’s supplied implementation. Integrated-system verification, website test, 10-turn interrogation, and squad sign-offs are not established by this audit.
+**Audit status:** Five local FST stress tests and five local channel transmissions completed against Syed Hashir Sohail’s supplied implementation. Integrated-system verification, website test, 10-turn interrogation, and squad sign-offs are not established by this audit.
 
 ## References
 
-1. Siddiqa, F. (2026). *02 — FST Dialogue Manager & Noisy Channel Protocol*. Squadron Goodfellow, Mission 02 (team implementation supplied for this audit).
-2. Attique, A. (2026). *01 — Lovelace Inquiry Brief*. Squadron Goodfellow, Mission 02 (team document supplied for this audit).
+1. Sohail, S. H. (2026). *02 — FST Dialogue Manager & Noisy Channel Protocol*. Squad Sutskever, Mission 02 (team implementation supplied for this audit).
+2. Sohail, S. H. (2026). *01 — Lovelace Inquiry Brief*. Squad Sutskever, Mission 02 (team document supplied for this audit).
 3. Shannon, C. E. (1948). *A Mathematical Theory of Communication*. Bell System Technical Journal, 27, 379–423, 623–656. https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf
 4. Turing, A. M. (1950). *Computing Machinery and Intelligence*. Mind, 59(236), 433–460. https://courses.cs.umbc.edu/471/papers/turing.pdf

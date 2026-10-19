@@ -1068,7 +1068,20 @@ def main() -> int:
         except (AttributeError, ValueError):
             pass
     load_dotenv()
-    args = build_parser().parse_args()
+    parser = build_parser()
+    args = parser.parse_args()
+    for name in ("rounds", "max_turns"):
+        if getattr(args, name) < 1:
+            parser.error(f"--{name.replace('_', '-')} must be at least 1")
+    if args.max_refinements is not None and args.max_refinements < 0:
+        parser.error("--max-refinements must be non-negative")
+    provs = None
+    if args.debate_providers:
+        provs = [x.strip() for x in args.debate_providers.split(",")]
+        if len(provs) not in (1, 3) or any(p not in ("mock", *DEFAULT_MODELS) for p in provs):
+            parser.error("--debate-providers requires 1 or 3 providers: mock, gemini, openai, anthropic")
+        if len(provs) == 1:
+            provs *= 3
     provider = auto_provider() if args.provider == "auto" else args.provider
     prompts = load_prompts(args.prompts_dir)
     logger = RunLogger(args.log_dir, prompts.protocol)
@@ -1083,13 +1096,7 @@ def main() -> int:
                            args.max_refinements, args.max_turns).run(args.claim)
 
         if args.mode in ("galilean", "both"):
-            if args.debate_providers:
-                provs = [x.strip() for x in args.debate_providers.split(",")]
-                if len(provs) == 1:
-                    provs = provs * 3
-                if len(provs) != 3:
-                    raise LLMError("--debate-providers needs 1 provider (used for all) or 3")
-            else:
+            if provs is None:
                 provs = [provider] * 3
             build_galilean(provs, logger, prompts, args.rounds).run(args.topic or prompts.dilemma)
 
